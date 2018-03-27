@@ -7,9 +7,6 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" groups="pdk" >
-    <copyfile src="core/root.mk" dest="Makefile" />
-  </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="platform/art" groups="pdk" />
   <project path="bionic" name="platform/bionic" groups="pdk" />
@@ -482,6 +479,9 @@
 
   <remote name="italankin" fetch="https://github.com/italankin/" />
 
+  <project path="build" name="aosp_hammerhead_platform-build" groups="pdk" remote="italankin" revision="master">
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
   <project path="device/lge/hammerhead" name="aosp_hammerhead_device" revision="master" remote="italankin" groups="device,hammerhead,broadcom_pdk,generic_fs"  />
 
 </manifest>
